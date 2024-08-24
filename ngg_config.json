@@ -4,21 +4,21 @@
 	"hard": 4,
 	"heighest_score": [
 		{
-			"time": 46,
-			"attempts": 8,
+			"time": 17,
+			"attempts": 6,
 			"date": "2024-08-24",
 			"Level": "Easy"
 		},
 		{
-			"time": 0,
-			"attempts": 0,
-			"date": "",
+			"time": 12,
+			"attempts": 3,
+			"date": "2024-08-24",
 			"Level": "Medium"
 		},
 		{
-			"time": 0,
-			"attempts": 0,
-			"date": "",
+			"time": 11,
+			"attempts": 4,
+			"date": "2024-08-24",
 			"Level": "Hard"
 		}
 	]

@@ -78,6 +78,13 @@ func play(input string, config *Config, chances int) {
 			config.HScore[0].Attempts = counter
 			config.HScore[0].Date = time.Now().Format(time.DateOnly)
 			config.saveChanges()
+		} else if counter == config.HScore[0].Attempts {
+			if elapsedTime < config.HScore[0].Time {
+				config.HScore[0].Time = elapsedTime
+				config.HScore[0].Attempts = counter
+				config.HScore[0].Date = time.Now().Format(time.DateOnly)
+				config.saveChanges()
+			}
 		}
 	case "Medium":
 		if counter < config.HScore[1].Attempts || config.HScore[1].Attempts == 0 {
@@ -85,6 +92,13 @@ func play(input string, config *Config, chances int) {
 			config.HScore[1].Attempts = counter
 			config.HScore[1].Date = time.Now().Format(time.DateOnly)
 			config.saveChanges()
+		} else if counter == config.HScore[1].Attempts {
+			if elapsedTime < config.HScore[1].Time {
+				config.HScore[1].Time = elapsedTime
+				config.HScore[1].Attempts = counter
+				config.HScore[1].Date = time.Now().Format(time.DateOnly)
+				config.saveChanges()
+			}
 		}
 	case "Hard":
 		if counter < config.HScore[2].Attempts || config.HScore[2].Attempts == 0 {
@@ -92,6 +106,13 @@ func play(input string, config *Config, chances int) {
 			config.HScore[2].Attempts = counter
 			config.HScore[2].Date = time.Now().Format(time.DateOnly)
 			config.saveChanges()
+		} else if counter == config.HScore[2].Attempts {
+			if elapsedTime < config.HScore[2].Time {
+				config.HScore[2].Time = elapsedTime
+				config.HScore[2].Attempts = counter
+				config.HScore[2].Date = time.Now().Format(time.DateOnly)
+				config.saveChanges()
+			}
 		}
 	}
 
