@@ -5,28 +5,33 @@ import (
 	"io"
 	"log"
 	"os"
+	"time"
 )
 
 type Config struct {
-	Easy   int    `json:"easy"`
-	Medium int    `json:"medium"`
-	Hard   int    `json:"hard"`
-	HScore HScore `json:"heighest_score`
+	Easy   int       `json:"easy"`
+	Medium int       `json:"medium"`
+	Hard   int       `json:"hard"`
+	HScore [3]HScore `json:"heighest_score"`
 	file   *os.File
 }
 
 type HScore struct {
-	Time string `json:"time"`
-	RC   string `json:"remaining_chances"`
+	Time     time.Duration `json:"time"`
+	Attempts int           `json:"attempts"`
+	Date     string        `json:"date"`
+	Level    string        `json:"Level"`
 }
 
 func (c *Config) initConfigFile() {
-	_, err := os.Stat("ngg.conf")
+	info, err := os.Stat("ngg.conf")
 	if os.IsNotExist(err) {
 		c.file, err = os.Create("ngg_config.json")
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
+		c.saveChanges()
+	} else if info.Size() == 0 {
 		c.saveChanges()
 	} else {
 		c.file, err = os.OpenFile("ngg_config.json", os.O_RDWR, 0644)
@@ -46,9 +51,12 @@ func (c *Config) initConfigFile() {
 
 func (c *Config) saveChanges() {
 	if c.Easy == 0 || c.Medium == 0 || c.Hard == 0 {
-		c.Easy = 4
+		c.Easy = 10
 		c.Medium = 7
-		c.Hard = 10
+		c.Hard = 4
+		c.HScore[0].Level = "Easy"
+		c.HScore[1].Level = "Medium"
+		c.HScore[2].Level = "Hard"
 	}
 
 	jsonData, err := json.MarshalIndent(c, "", "\t")

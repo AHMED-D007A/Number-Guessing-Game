@@ -1,9 +1,25 @@
 {
-	"easy": 4,
+	"easy": 10,
 	"medium": 7,
-	"hard": 10,
-	"HScore": {
-		"time": "",
-		"remaining_chances": ""
-	}
+	"hard": 4,
+	"heighest_score": [
+		{
+			"time": 46,
+			"attempts": 8,
+			"date": "2024-08-24",
+			"Level": "Easy"
+		},
+		{
+			"time": 0,
+			"attempts": 0,
+			"date": "",
+			"Level": "Medium"
+		},
+		{
+			"time": 0,
+			"attempts": 0,
+			"date": "",
+			"Level": "Hard"
+		}
+	]
 }
