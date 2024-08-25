@@ -1,5 +1,5 @@
 # Number Guessing Game
-- simple command line interface (CLI) to fetch the recent activity of a GitHub user and display it in the terminal.
+- Simple number guessing game where the computer randomly selects a number and the user has to guess it. The user will be given a limited number of chances to guess the number. If the user guesses the number correctly, the game will end, and the user will win. Otherwise, the game will continue until the user runs out of chances.
 - This project is from the project based road map, you can find it [here](https://roadmap.sh/backend/projects).
 - You can read more about the project form [here](https://roadmap.sh/projects/number-guessing-game).
 
